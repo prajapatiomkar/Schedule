@@ -1,17 +1,10 @@
 import express from "express";
+import { signin, signout, signup } from "../controllers/instructor.js";
 
 const router = express.Router();
 
-router.post("/signup", (req, res) => {
-  res.status(200).json({ message: "signup" });
-});
-
-router.post("/signin", (req, res) => {
-  res.status(200).json({ message: "signin" });
-});
-
-router.delete("/signout", (req, res) => {
-  res.status(200).json({ message: "logout" });
-});
+router.post("/signup", signup);
+router.post("/signin", signin);
+router.delete("/signout", signout);
 
 export default router;
